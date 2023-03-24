@@ -45,6 +45,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
     }
+    
     const response = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
@@ -63,6 +64,7 @@ const MyPostWidget = ({ picturePath }) => {
         <InputBase
           placeholder="What's on your mind..."
           onChange={(e) => setPost(e.target.value)}
+          value={post}
           sx={{
             width: "100%",
             backgroundColor: palette.neutral.light,
@@ -115,7 +117,9 @@ const MyPostWidget = ({ picturePath }) => {
           </Dropzone>
         </Box>
       )}
+
       <Divider sx={{ margin: "1.25rem 0" }} />
+
       <FlexBetween>
         <FlexBetween gap="0.25rem" onClick={() => setIsImage(!isImage)}>
           <ImageOutlined sx={{ color: mediumMain }} />
@@ -152,7 +156,6 @@ const MyPostWidget = ({ picturePath }) => {
         ) : (
           <FlexBetween gap="0.25rem">
             <MoreHorizOutlined sx={{ color: mediumMain }} />
-            <Typography color={mediumMain}>Clip</Typography>
           </FlexBetween>
         )}
 
