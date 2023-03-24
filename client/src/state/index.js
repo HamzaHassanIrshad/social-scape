@@ -34,13 +34,13 @@ export const authSlice = createSlice({
     },
     setPost: (state, action) => {
       const updatedPost = state.posts.map((post) => {
-        if (post._id === action.payload.post_id) {
+        if (post._id === action.payload.post._id) {
           return action.payload.post;
         } else {
           return post;
         }
       });
-      state.post = updatedPost;
+      state.posts = updatedPost;
     },
   },
 });
