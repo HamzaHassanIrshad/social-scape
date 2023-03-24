@@ -124,9 +124,7 @@ const Form = () => {
             gap="30px"
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
             sx={{
-              "&>div": {
-                gridColumn: isNonMobile ? undefined : "span 4",
-              },
+              "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
             }}
           >
             {isRegister && (
@@ -210,6 +208,7 @@ const Form = () => {
                 </Box>
               </>
             )}
+
             <TextField
               label="Email"
               onBlur={handleBlur}
@@ -243,9 +242,7 @@ const Form = () => {
                 p: "1rem",
                 backgroundColor: palette.primary.main,
                 color: palette.background.alt,
-                "&:hover": {
-                  color: palette.primary.main,
-                },
+                "&:hover": { color: palette.primary.main },
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}

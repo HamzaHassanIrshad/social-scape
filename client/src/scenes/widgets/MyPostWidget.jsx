@@ -45,7 +45,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
     }
-    
+
     const response = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
@@ -125,12 +125,7 @@ const MyPostWidget = ({ picturePath }) => {
           <ImageOutlined sx={{ color: mediumMain }} />
           <Typography
             color={mediumMain}
-            sx={{
-              "&:hover": {
-                cursor: "pointer",
-                color: medium,
-              },
-            }}
+            sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
             Image
           </Typography>
