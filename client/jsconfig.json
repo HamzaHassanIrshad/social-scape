@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "baseUrl": "src"
+        "baseUrl": "https://social-media-mern-server.vercel.app/"
     },
     "include": ["src"]
 }
